@@ -1,7 +1,7 @@
 {
   "name": "auth-service",
   "version": "1.0.0",
-  "description": "This is my auth-service",
+  "description": "This is my auth-service for user management",
   "main": "index.js",
   "scripts": {
     "dev": "node src/server.js"
