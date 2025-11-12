@@ -24,7 +24,7 @@ export default [
         ...globals.es2021,
       },
       parserOptions: {
-        project: true,
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
@@ -32,6 +32,18 @@ export default [
       '@typescript-eslint': tseslint,
       import: importPlugin,
       prettier: prettierPlugin,
+    },
+    // ✅
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+        node: {
+          extensions: ['.js', '.ts', '.jsx', '.tsx'], // resolve these
+        },
+      },
     },
     rules: {
       // TypeScript Recommended
