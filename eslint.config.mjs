@@ -14,6 +14,9 @@ const __dirname = path.dirname(__filename);
 export default [
   eslint.configs.recommended,
   {
+    ignores: ['jest.config.js', 'winston.config.js', 'dist/**', 'node_modules/**'],
+  },
+  {
     files: ['**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -22,6 +25,7 @@ export default [
       globals: {
         ...globals.node,
         ...globals.es2021,
+        ...globals.jest, // add node and jest both in eslint
       },
       parserOptions: {
         project: './tsconfig.json',
